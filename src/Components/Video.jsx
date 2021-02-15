@@ -4,7 +4,7 @@ import Hls from "hls.js";
 
 function Video({ url }, ref) {
   const videoRef = useRef(null);
-  const [videoStatus, setVideoStatus] = useState("pause");
+  const [videoStatus, setVideoStatus] = useState("playing");
   const observer = useRef();
 
   const handleVideoPause = () => {
