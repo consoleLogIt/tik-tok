@@ -18,7 +18,7 @@
   display: none;
 }
 
-.lds-ripple {
+.video-loader {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -27,17 +27,17 @@
  
  
 }
-.lds-ripple div {
+.video-loader div {
   position: absolute;
   border: 4px solid #fff;
   opacity: 1;
   border-radius: 50%;
-  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: video-loader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-.lds-ripple div:nth-child(2) {
+.video-loader div:nth-child(2) {
   animation-delay: -0.5s;
 }
-@keyframes lds-ripple {
+@keyframes video-loader {
   0% {
     top: 16px;
     left: 16px;

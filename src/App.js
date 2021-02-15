@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Video } from "./Components";
 import "./App.css";
 import useVideoLoad from "./useVideoLoad";
@@ -14,20 +14,13 @@ function App() {
     if (observer.current) observer.current.disconnect();
 
     observer.current = new IntersectionObserver((entries) => {
-      console.log(entries)
-    
-      console.log(pageNumber,"app page number")
-
-      if (entries[0].isIntersecting&&pageNumber<1) {
-        console.log("visible---------------->");
+      if (entries[0].isIntersecting && pageNumber < 1) {
         setPageNumber((prevState) => prevState + 1);
       }
     });
 
     if (node) observer.current.observe(node);
   });
-
-  console.log(videos);
 
   return (
     <div className="container">
@@ -43,12 +36,7 @@ function App() {
                 />
               );
             } else {
-              return (
-                <Video
-                  url={item.playbackUrl}
-                  key={index}
-                />
-              );
+              return <Video url={item.playbackUrl} key={index} />;
             }
           })}
       </div>
