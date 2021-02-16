@@ -41,7 +41,7 @@ function Video({ url }, ref) {
               promisePlay
                 .then(() => {
                   videoRef.current.pause();
-                  setVideoStatus("paused")
+                  setVideoStatus("paused");
                 })
                 .catch((err) => console.log(err));
             }

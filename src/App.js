@@ -8,7 +8,6 @@ function App() {
 
   const { videos } = useVideoLoad(pageNumber);
 
-  const ScrollContainerRef = useRef(null);
   const observer = useRef();
   const lastVideoElementRef = useCallback((node) => {
     if (observer.current) observer.current.disconnect();
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <div className="container">
-      <div ref={ScrollContainerRef} className="videoContainer">
+      <div  className="videoContainer">
         {videos.length > 0 &&
           videos.map((item, index) => {
             if (videos.length === index + 1) {
