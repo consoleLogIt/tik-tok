@@ -9,7 +9,7 @@ function Video({ url }, ref) {
 
   const handleVideoPause = () => {
     videoRef.current.pause();
-    setVideoStatus("pause");
+    setVideoStatus("paused");
   };
 
   const handleVideoPlay = () => {
@@ -34,12 +34,14 @@ function Video({ url }, ref) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             promisePlay = videoRef.current.play();
+            setVideoStatus("playing");
           } else {
             // handle if the video play promise is pending
             if (promisePlay) {
               promisePlay
                 .then(() => {
                   videoRef.current.pause();
+                  setVideoStatus("paused")
                 })
                 .catch((err) => console.log(err));
             }

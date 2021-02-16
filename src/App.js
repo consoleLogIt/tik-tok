@@ -17,7 +17,7 @@ function App() {
       if (entries[0].isIntersecting && pageNumber < 1) {
         setPageNumber((prevState) => prevState + 1);
       }
-    });
+    },);
 
     if (node) observer.current.observe(node);
   });
